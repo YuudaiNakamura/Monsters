@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: necromancer_color+spec
+  m_Shader: {fileID: 4800000, guid: c25dd9ef5f74e46489e3776ddd5421aa, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 11d4bad88ca2b8c4dbd6ecb4651d244b, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 5466d8610b088e44986230ccb663dc41, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Cube
+        second:
+          m_Texture: {fileID: 8900000, guid: 65a7d442f1932344384c29c6fecc89c6, type: 2}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ParallaxMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 5466d8610b088e44986230ccb663dc41, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DifuseColor
+        second:
+          m_Texture: {fileID: 2800000, guid: ed32d85e08012f74f8cb846f1fd32c1d, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MainTexture
+        second:
+          m_Texture: {fileID: 2800000, guid: 11d4bad88ca2b8c4dbd6ecb4651d244b, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Normalmap
+        second:
+          m_Texture: {fileID: 2800000, guid: 5466d8610b088e44986230ccb663dc41, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Reflection
+        second: 0
+      data:
+        first:
+          name: _Shininess
+        second: .237304688
+      data:
+        first:
+          name: _Gloss
+        second: .428571463
+      data:
+        first:
+          name: _RimFresnel
+        second: .74000001
+      data:
+        first:
+          name: _Parallax
+        second: .0481249988
+      data:
+        first:
+          name: _FrezPow
+        second: 0
+      data:
+        first:
+          name: _FrezFalloff
+        second: 1.5
+      data:
+        first:
+          name: _EdgeAlpha
+        second: 0
+      data:
+        first:
+          name: _Metalics
+        second: .839285731
+      data:
+        first:
+          name: _NormalPower
+        second: 1.42857146
+      data:
+        first:
+          name: _SpecularPower
+        second: 1.33928561
+      data:
+        first:
+          name: _RimExp
+        second: 1.16999996
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SpecularColor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _RimColor
+        second: {r: .5, g: .449016005, b: .349264711, a: 1}
+      data:
+        first:
+          name: _ReflectColor
+        second: {r: .963235319, g: .705086291, b: .461688638, a: .501960814}
+      data:
+        first:
+          name: _ColorTint
+        second: {r: .768965542, g: .768965542, b: .768965542, a: 1}

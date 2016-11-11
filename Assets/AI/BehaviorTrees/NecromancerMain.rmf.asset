@@ -1,0 +1,541 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1593418965, guid: 5bc78d78affecc842b484b4468aea86a, type: 3}
+  m_Name: NecromancerMain.rmf
+  m_EditorClassIdentifier: 
+  serializationString: <scriptableobject version="1.2" type="RAIN.BehaviorTrees.BTAsset"><fields><field
+    value="&lt;behaviortree version=&quot;1.1&quot; repeatuntil=&quot;&quot; name=&quot;NecromancerMain&quot;
+    debugbreak=&quot;False&quot;&gt;&lt;sequencer usepriorities=&quot;False&quot;
+    repeatuntil=&quot;&quot; name=&quot;root&quot; debugbreak=&quot;False&quot;&gt;&lt;action
+    repeatuntil=&quot;&quot; priority=&quot;&quot; parametervalues=&quot;aG9tZUJhc2UAbWF4RGlzdGFuY2VGcm9tSG9tZQ==&quot;
+    parameters=&quot;QmFzZVZhcmlhYmxlTmFtZQBNYXhGaW5kRGlzdGFuY2U=&quot; namespace=&quot;(global)&quot;
+    name=&quot;FindOrCreateBase&quot; debugbreak=&quot;False&quot; classname=&quot;Sentio.Necromancer.FindOrCreateBase&quot;
+    /&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;currentEnemy = null&quot; expression=&quot;currentEnemy = null&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;selector usepriorities=&quot;False&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Behavior&quot; debugbreak=&quot;False&quot;&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;Dead&quot; debugbreak=&quot;False&quot;&gt;&lt;expression returnvalue=&quot;evaluate&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;dead == true&quot; expression=&quot;dead
+    == true&quot; debugbreak=&quot;False&quot; /&gt;&lt;audio waituntildone=&quot;True&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Die&quot; forcestoponexit=&quot;False&quot;
+    delay=&quot;0&quot; debugbreak=&quot;False&quot; audiosource=&quot;Die&quot; /&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;running&quot; priority=&quot;&quot;
+    name=&quot;Do Nothing&quot; debugbreak=&quot;False&quot;&gt;&lt;yield priority=&quot;&quot;
+    name=&quot;yield&quot; debugbreak=&quot;False&quot; /&gt;&lt;/sequencer&gt;&lt;/sequencer&gt;&lt;constraint
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;(dead == false) &amp;amp;&amp;amp;
+    (dying == false)&quot; debugbreak=&quot;False&quot; constraint=&quot;(dead ==
+    false) &amp;amp;&amp;amp; (dying == false)&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot;
+    succeed=&quot;any&quot; repeatuntil=&quot;running&quot; name=&quot;Do behaviors
+    forever&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;action
+    repeatuntil=&quot;running&quot; parametervalues=&quot;aGVhZExvb2tUYXJnZXQ=&quot;
+    parameters=&quot;TG9va1RhcmdldFZhcmlhYmxl&quot; namespace=&quot;(global)&quot;
+    name=&quot;HeadLook&quot; debugbreak=&quot;False&quot; classname=&quot;Sentio.Necromancer.HeadLook&quot;
+    /&gt;&lt;sequencer usepriorities=&quot;False&quot; repeatuntil=&quot;running&quot;
+    name=&quot;Reset if current enemy is null&quot; debugbreak=&quot;False&quot;&gt;&lt;expression
+    returnvalue=&quot;evaluate&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;currentEnemy == null&quot; expression=&quot;currentEnemy == null&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;behavior = defaultBehavior&quot;
+    expression=&quot;behavior = defaultBehavior&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;/sequencer&gt;&lt;sequencer usepriorities=&quot;False&quot; repeatuntil=&quot;running&quot;
+    name=&quot;Set Last Damage Time&quot; debugbreak=&quot;False&quot;&gt;&lt;expression
+    returnvalue=&quot;evaluate&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;damageReceived == true&quot; expression=&quot;damageReceived == true&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;lastDamageTime = currentTime()&quot;
+    expression=&quot;lastDamageTime = currentTime()&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;/sequencer&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot;
+    name=&quot;Normal Behaviors&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Patrol&quot; debugbreak=&quot;False&quot;
+    constraint=&quot;behavior == &amp;quot;patrol&amp;quot;&quot;&gt;&lt;action repeatuntil=&quot;&quot;
+    parametervalues=&quot;InBhdHJvbCIAaG9tZVBhdHJvbFJvdXRlAG1heERpc3RhbmNlRnJvbUhvbWVCYXNlAG1heERpc3RhbmNlRnJvbUhvbWVCYXNlICogMi4wIC8gMy4w&quot;
+    parameters=&quot;UGF0cm9sT3JXYW5kZXIAUGF0aE9yUm91dGVWYXJpYWJsZU5hbWUATWF4RmluZERpc3RhbmNlAE1heFJvdXRlRGlzdGFuY2U=&quot;
+    namespace=&quot;(global)&quot; name=&quot;FindOrCreatePatrolRoute&quot; debugbreak=&quot;False&quot;
+    classname=&quot;Sentio.Necromancer.FindOrCreatePatrol&quot; /&gt;&lt;expression
+    returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; name=&quot;headLookTarget
+    = null&quot; expression=&quot;headLookTarget = null&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; name=&quot;maxFromBase
+    = maxDistanceFromHomeBase&quot; expression=&quot;maxFromBase = maxDistanceFromHomeBase&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;mecparam valueexpression=&quot;false&quot;
+    repeatuntil=&quot;&quot; parametertype=&quot;boolean&quot; parametername=&quot;IsAttacking&quot;
+    name=&quot;IsAttacking = false&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot;
+    /&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;any&quot; repeatuntil=&quot;&quot;
+    name=&quot;Patrol&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;success&quot; name=&quot;Check
+    Enemy Detected&quot; debugbreak=&quot;False&quot;&gt;&lt;action repeatuntil=&quot;&quot;
+    priority=&quot;&quot; parametervalues=&quot;Y3VycmVudEVuZW15AGF0dGFja0Rpc3RhbmNl&quot;
+    parameters=&quot;Q3VycmVudEVuZW15VmFyaWFibGUAQXR0YWNrRGlzdGFuY2VWYXJpYWJsZQ==&quot;
+    namespace=&quot;(global)&quot; name=&quot;Check for Enemies&quot; debugbreak=&quot;False&quot;
+    classname=&quot;Sentio.Necromancer.CheckForEnemies&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;behavior = &amp;quot;chase&amp;quot;&quot;
+    expression=&quot;behavior = &amp;quot;chase&amp;quot;&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;/sequencer&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot;
+    name=&quot;Patrol if not hit&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;damageReceived == false&quot;
+    debugbreak=&quot;False&quot; constraint=&quot;damageReceived == false&quot;&gt;&lt;waypointpatrol
+    waypointsetvariable=&quot;homePatrolRoute&quot; waypointactiontype=&quot;patrol&quot;
+    traversetype=&quot;pingpong&quot; traverseorder=&quot;forward&quot; repeatuntil=&quot;&quot;
+    pathtargetvariable=&quot;&quot; name=&quot;Waypoint Patrol&quot; movetargetvariable=&quot;moveTarget&quot;
+    debugbreak=&quot;False&quot;&gt;&lt;move turnspeed=&quot;&quot; repeatuntil=&quot;&quot;
+    name=&quot;move&quot; movetarget=&quot;moveTarget&quot; movespeed=&quot;movementSpeed&quot;
+    facetarget=&quot;&quot; debugbreak=&quot;False&quot; closeenoughdistance=&quot;&quot;
+    closeenoughangle=&quot;&quot; /&gt;&lt;random repeatuntil=&quot;&quot; name=&quot;random&quot;
+    debugbreak=&quot;False&quot;&gt;&lt;expression weight=&quot;0.7&quot; returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; name=&quot;true&quot; expression=&quot;1&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;action weight=&quot;0.3&quot; repeatuntil=&quot;&quot; parametervalues=&quot;cmFuZG9tKDMuMCw1LjAp&quot;
+    parameters=&quot;UGF1c2VUaW1l&quot; namespace=&quot;(global)&quot; name=&quot;PauseAndLookAround&quot;
+    debugbreak=&quot;False&quot; classname=&quot;Sentio.Necromancer.PauseAndLookAround&quot;
+    /&gt;&lt;/random&gt;&lt;/waypointpatrol&gt;&lt;/constraint&gt;&lt;sequencer usepriorities=&quot;False&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Got Hit, so pause&quot;
+    debugbreak=&quot;False&quot;&gt;&lt;timer waitforsec=&quot;3&quot; returnvalue=&quot;success&quot;
+    priority=&quot;&quot; name=&quot;timer&quot; debugbreak=&quot;False&quot; /&gt;&lt;/sequencer&gt;&lt;/selector&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;running&quot; name=&quot;Check
+    Got Hit&quot; debugbreak=&quot;False&quot;&gt;&lt;expression returnvalue=&quot;evaluate&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;damageReceived == true&quot;
+    expression=&quot;damageReceived == true&quot; debugbreak=&quot;False&quot; /&gt;&lt;audio
+    waituntildone=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;GotHit&quot; forcestoponexit=&quot;False&quot; delay=&quot;0&quot;
+    debugbreak=&quot;False&quot; audiosource=&quot;GotHit&quot; /&gt;&lt;mecparam
+    valueexpression=&quot;true&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    parametertype=&quot;trigger&quot; parametername=&quot;GotHit2&quot; name=&quot;GotHit&quot;
+    debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;timer waitforsec=&quot;3&quot;
+    returnvalue=&quot;success&quot; priority=&quot;&quot; name=&quot;timer&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;mecparam valueexpression=&quot;false&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    parametertype=&quot;trigger&quot; parametername=&quot;GotHit2&quot; name=&quot;Not
+    GotHit&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;/sequencer&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;PathWalk&quot; debugbreak=&quot;False&quot;
+    constraint=&quot;behavior == &amp;quot;pathwander&amp;quot;&quot;&gt;&lt;action
+    repeatuntil=&quot;&quot; parametervalues=&quot;IndhbmRlciIAaG9tZVdhbmRlclBhdGgAbWF4RGlzdGFuY2VGcm9tSG9tZUJhc2UAbWF4RGlzdGFuY2VGcm9tSG9tZUJhc2UgKiAyLjAgLyAzLjA=&quot;
+    parameters=&quot;UGF0cm9sT3JXYW5kZXIAUGF0aE9yUm91dGVWYXJpYWJsZU5hbWUATWF4RmluZERpc3RhbmNlAE1heFJvdXRlRGlzdGFuY2U=&quot;
+    namespace=&quot;(global)&quot; name=&quot;FindOrCreatePatrolRoute&quot; debugbreak=&quot;False&quot;
+    classname=&quot;Sentio.Necromancer.FindOrCreatePatrol&quot; /&gt;&lt;expression
+    returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; name=&quot;headLookTarget
+    = null&quot; expression=&quot;headLookTarget = null&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; name=&quot;maxFromBase
+    = maxDistanceFromHomeBase&quot; expression=&quot;maxFromBase = maxDistanceFromHomeBase&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;mecparam valueexpression=&quot;false&quot;
+    repeatuntil=&quot;&quot; parametertype=&quot;boolean&quot; parametername=&quot;IsAttacking&quot;
+    name=&quot;IsAttacking = false&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot;
+    /&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;any&quot; repeatuntil=&quot;&quot;
+    name=&quot;PathWalk&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;success&quot; name=&quot;Check
+    Enemy Detected&quot; debugbreak=&quot;False&quot;&gt;&lt;action repeatuntil=&quot;&quot;
+    priority=&quot;&quot; parametervalues=&quot;Y3VycmVudEVuZW15AGF0dGFja0Rpc3RhbmNl&quot;
+    parameters=&quot;Q3VycmVudEVuZW15VmFyaWFibGUAQXR0YWNrRGlzdGFuY2VWYXJpYWJsZQ==&quot;
+    namespace=&quot;(global)&quot; name=&quot;Check for Enemies&quot; debugbreak=&quot;False&quot;
+    classname=&quot;Sentio.Necromancer.CheckForEnemies&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;behavior = &amp;quot;chase&amp;quot;&quot;
+    expression=&quot;behavior = &amp;quot;chase&amp;quot;&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;/sequencer&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot;
+    name=&quot;Wander if not hit&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;damageReceived == false&quot;
+    debugbreak=&quot;False&quot; constraint=&quot;damageReceived == false&quot;&gt;&lt;action
+    repeatuntil=&quot;&quot; parametervalues=&quot;aG9tZVdhbmRlclBhdGgAcGF0aERlc3RpbmF0aW9u&quot;
+    parameters=&quot;V2F5cG9pbnROZXR3b3JrAE1vdmVUYXJnZXRWYXJpYWJsZQ==&quot; namespace=&quot;(global)&quot;
+    name=&quot;Choose Path Waypoint&quot; debugbreak=&quot;False&quot; classname=&quot;Sentio.Necromancer.ChooseWaypointWalkTarget&quot;
+    /&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; name=&quot;headLookTarget
+    = null&quot; expression=&quot;headLookTarget = null&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;waypointpath waypointsetvariable=&quot;homeWanderPath&quot; waypointactiontype=&quot;path&quot;
+    traversetype=&quot;pingpong&quot; traverseorder=&quot;forward&quot; repeatuntil=&quot;&quot;
+    pathtargetvariable=&quot;pathDestination&quot; name=&quot;Waypoint Path&quot;
+    movetargetvariable=&quot;moveTarget&quot; debugbreak=&quot;False&quot;&gt;&lt;move
+    turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot; movetarget=&quot;moveTarget&quot;
+    movespeed=&quot;movementSpeed&quot; facetarget=&quot;&quot; debugbreak=&quot;False&quot;
+    closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot; /&gt;&lt;/waypointpath&gt;&lt;action
+    repeatuntil=&quot;&quot; parametervalues=&quot;cmFuZG9tKDMuMCw1LjAp&quot; parameters=&quot;UGF1c2VUaW1l&quot;
+    namespace=&quot;(global)&quot; name=&quot;PauseAndLookAround&quot; debugbreak=&quot;False&quot;
+    classname=&quot;Sentio.Necromancer.PauseAndLookAround&quot; /&gt;&lt;/constraint&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;Got Hit, so pause&quot; debugbreak=&quot;False&quot;&gt;&lt;timer waitforsec=&quot;3&quot;
+    returnvalue=&quot;success&quot; priority=&quot;&quot; name=&quot;timer&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;/sequencer&gt;&lt;/selector&gt;&lt;sequencer usepriorities=&quot;False&quot;
+    repeatuntil=&quot;running&quot; name=&quot;Check Got Hit&quot; debugbreak=&quot;False&quot;&gt;&lt;expression
+    returnvalue=&quot;evaluate&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;damageReceived == true&quot; expression=&quot;damageReceived == true&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;headLookTarget = null&quot;
+    expression=&quot;headLookTarget = null&quot; debugbreak=&quot;False&quot; /&gt;&lt;audio
+    waituntildone=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;GotHit&quot; forcestoponexit=&quot;False&quot; delay=&quot;0&quot;
+    debugbreak=&quot;False&quot; audiosource=&quot;GotHit&quot; /&gt;&lt;mecparam
+    valueexpression=&quot;true&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    parametertype=&quot;trigger&quot; parametername=&quot;GotHit2&quot; name=&quot;GotHit&quot;
+    debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;timer waitforsec=&quot;3&quot;
+    returnvalue=&quot;success&quot; priority=&quot;&quot; name=&quot;timer&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;mecparam valueexpression=&quot;false&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    parametertype=&quot;trigger&quot; parametername=&quot;GotHit2&quot; name=&quot;Not
+    GotHit&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;/sequencer&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;RandomWalk&quot; debugbreak=&quot;False&quot;
+    constraint=&quot;behavior == &amp;quot;randomwander&amp;quot;&quot;&gt;&lt;expression
+    returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; name=&quot;maxFromBase
+    = maxDistanceFromHomeBase&quot; expression=&quot;maxFromBase = maxDistanceFromHomeBase&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; name=&quot;headLookTarget = null&quot; expression=&quot;headLookTarget
+    = null&quot; debugbreak=&quot;False&quot; /&gt;&lt;mecparam valueexpression=&quot;false&quot;
+    repeatuntil=&quot;&quot; parametertype=&quot;boolean&quot; parametername=&quot;IsAttacking&quot;
+    name=&quot;IsAttacking = false&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot;
+    /&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;any&quot; repeatuntil=&quot;&quot;
+    name=&quot;RandomWalk&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;success&quot; name=&quot;Check
+    Enemy Detected&quot; debugbreak=&quot;False&quot;&gt;&lt;action repeatuntil=&quot;&quot;
+    priority=&quot;&quot; parametervalues=&quot;Y3VycmVudEVuZW15AGF0dGFja0Rpc3RhbmNl&quot;
+    parameters=&quot;Q3VycmVudEVuZW15VmFyaWFibGUAQXR0YWNrRGlzdGFuY2VWYXJpYWJsZQ==&quot;
+    namespace=&quot;(global)&quot; name=&quot;Check for Enemies&quot; debugbreak=&quot;False&quot;
+    classname=&quot;Sentio.Necromancer.CheckForEnemies&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;behavior = &amp;quot;chase&amp;quot;&quot;
+    expression=&quot;behavior = &amp;quot;chase&amp;quot;&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;/sequencer&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot;
+    name=&quot;Patrol if not hit&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;damageReceived == false&quot;
+    debugbreak=&quot;False&quot; constraint=&quot;damageReceived == false&quot;&gt;&lt;action
+    repeatuntil=&quot;&quot; parametervalues=&quot;aG9tZUJhc2UAbWF4RGlzdGFuY2VGcm9tSG9tZUJhc2UgKiAyLjAgLyAzLjAAbW92ZVRhcmdldA==&quot;
+    parameters=&quot;Q2VudGVyUG9pbnRWYXJpYWJsZQBNYXhEaXN0YW5jZUZyb21DZW50ZXIATW92ZVRhcmdldFZhcmlhYmxl&quot;
+    namespace=&quot;(global)&quot; name=&quot;Choose Random Walk Target&quot; debugbreak=&quot;False&quot;
+    classname=&quot;Sentio.Necromancer.ChooseRandomWalkTarget&quot; /&gt;&lt;move
+    turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot; movetarget=&quot;moveTarget&quot;
+    movespeed=&quot;movementSpeed&quot; facetarget=&quot;&quot; debugbreak=&quot;False&quot;
+    closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot; /&gt;&lt;action
+    repeatuntil=&quot;&quot; parametervalues=&quot;cmFuZG9tKDMuMCw1LjAp&quot; parameters=&quot;UGF1c2VUaW1l&quot;
+    namespace=&quot;(global)&quot; name=&quot;PauseAndLookAround&quot; debugbreak=&quot;False&quot;
+    classname=&quot;Sentio.Necromancer.PauseAndLookAround&quot; /&gt;&lt;/constraint&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;Got Hit, so pause&quot; debugbreak=&quot;False&quot;&gt;&lt;timer waitforsec=&quot;3&quot;
+    returnvalue=&quot;success&quot; priority=&quot;&quot; name=&quot;timer&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;/sequencer&gt;&lt;/selector&gt;&lt;sequencer usepriorities=&quot;False&quot;
+    repeatuntil=&quot;running&quot; name=&quot;Check Got Hit&quot; debugbreak=&quot;False&quot;&gt;&lt;expression
+    returnvalue=&quot;evaluate&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;damageReceived == true&quot; expression=&quot;damageReceived == true&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;audio waituntildone=&quot;False&quot; repeatuntil=&quot;&quot;
+    priority=&quot;&quot; name=&quot;GotHit&quot; forcestoponexit=&quot;False&quot;
+    delay=&quot;0&quot; debugbreak=&quot;False&quot; audiosource=&quot;GotHit&quot;
+    /&gt;&lt;mecparam valueexpression=&quot;true&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    parametertype=&quot;trigger&quot; parametername=&quot;GotHit2&quot; name=&quot;GotHit&quot;
+    debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;timer waitforsec=&quot;3&quot;
+    returnvalue=&quot;success&quot; priority=&quot;&quot; name=&quot;timer&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;mecparam valueexpression=&quot;false&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    parametertype=&quot;trigger&quot; parametername=&quot;GotHit2&quot; name=&quot;Not
+    GotHit&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;/sequencer&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;IdleAndWait&quot; debugbreak=&quot;False&quot;
+    constraint=&quot;behavior == &amp;quot;wait&amp;quot;&quot;&gt;&lt;expression
+    returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; name=&quot;maxFromBase
+    = maxDistanceFromHomeBase&quot; expression=&quot;maxFromBase = maxDistanceFromHomeBase&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;mecparam valueexpression=&quot;false&quot;
+    repeatuntil=&quot;&quot; parametertype=&quot;boolean&quot; parametername=&quot;IsAttacking&quot;
+    name=&quot;IsAttacking = false&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot;
+    /&gt;&lt;sequencer usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;Go
+    Home&quot; debugbreak=&quot;False&quot;&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;headLookTarget = null&quot;
+    expression=&quot;headLookTarget = null&quot; debugbreak=&quot;False&quot; /&gt;&lt;move
+    turnspeed=&quot;&quot; repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;move&quot;
+    movetarget=&quot;homeBase&quot; movespeed=&quot;movementSpeed&quot; facetarget=&quot;&quot;
+    debugbreak=&quot;False&quot; closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot;
+    /&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;currentEnemy = null&quot; expression=&quot;currentEnemy = null&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;/sequencer&gt;&lt;parallel tiebreaker=&quot;fail&quot;
+    succeed=&quot;any&quot; repeatuntil=&quot;&quot; name=&quot;Wait&quot; fail=&quot;any&quot;
+    debugbreak=&quot;False&quot;&gt;&lt;sequencer usepriorities=&quot;False&quot;
+    repeatuntil=&quot;success&quot; name=&quot;Check Enemy Detected&quot; debugbreak=&quot;False&quot;&gt;&lt;action
+    repeatuntil=&quot;&quot; priority=&quot;&quot; parametervalues=&quot;Y3VycmVudEVuZW15AGF0dGFja0Rpc3RhbmNl&quot;
+    parameters=&quot;Q3VycmVudEVuZW15VmFyaWFibGUAQXR0YWNrRGlzdGFuY2VWYXJpYWJsZQ==&quot;
+    namespace=&quot;(global)&quot; name=&quot;Check for Enemies&quot; debugbreak=&quot;False&quot;
+    classname=&quot;Sentio.Necromancer.CheckForEnemies&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;behavior = &amp;quot;chase&amp;quot;&quot;
+    expression=&quot;behavior = &amp;quot;chase&amp;quot;&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;/sequencer&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot;
+    name=&quot;Wait if not hit&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
+    repeatuntil=&quot;failure&quot; priority=&quot;&quot; name=&quot;damageReceived
+    == false&quot; debugbreak=&quot;False&quot; constraint=&quot;damageReceived ==
+    false&quot;&gt;&lt;action repeatuntil=&quot;&quot; parametervalues=&quot;cmFuZG9tKDQuMCwxMC4wKQ==&quot;
+    parameters=&quot;UGF1c2VUaW1l&quot; namespace=&quot;(global)&quot; name=&quot;PauseAndLookAround&quot;
+    debugbreak=&quot;False&quot; classname=&quot;Sentio.Necromancer.PauseAndLookAround&quot;
+    /&gt;&lt;timer waitforsec=&quot;random(0.0, 5.0)&quot; returnvalue=&quot;success&quot;
+    name=&quot;timer&quot; debugbreak=&quot;False&quot; /&gt;&lt;/constraint&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;Got Hit, so pause&quot; debugbreak=&quot;False&quot;&gt;&lt;timer waitforsec=&quot;3&quot;
+    returnvalue=&quot;success&quot; priority=&quot;&quot; name=&quot;timer&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;/sequencer&gt;&lt;/selector&gt;&lt;sequencer usepriorities=&quot;False&quot;
+    repeatuntil=&quot;running&quot; name=&quot;Check Got Hit&quot; debugbreak=&quot;False&quot;&gt;&lt;expression
+    returnvalue=&quot;evaluate&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;damageReceived == true&quot; expression=&quot;damageReceived == true&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;headLookTarget = currentEnemy&quot;
+    expression=&quot;headLookTarget = currentEnemy&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;audio waituntildone=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;GotHit&quot; forcestoponexit=&quot;False&quot; delay=&quot;0&quot;
+    debugbreak=&quot;False&quot; audiosource=&quot;GotHit&quot; /&gt;&lt;mecparam
+    valueexpression=&quot;true&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    parametertype=&quot;trigger&quot; parametername=&quot;GotHit2&quot; name=&quot;GotHit&quot;
+    debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;timer waitforsec=&quot;3&quot;
+    returnvalue=&quot;success&quot; priority=&quot;&quot; name=&quot;timer&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;mecparam valueexpression=&quot;false&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    parametertype=&quot;trigger&quot; parametername=&quot;GotHit2&quot; name=&quot;Not
+    GotHit&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;/sequencer&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Chase&quot; debugbreak=&quot;False&quot;
+    constraint=&quot;behavior == &amp;quot;chase&amp;quot; &amp;amp;&amp;amp; currentEnemy
+    != null&quot;&gt;&lt;mecparam valueexpression=&quot;false&quot; repeatuntil=&quot;&quot;
+    parametertype=&quot;boolean&quot; parametername=&quot;IsAttacking&quot; name=&quot;IsAttacking
+    = false&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;selector
+    usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;Chase or Go
+    Home&quot; debugbreak=&quot;False&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot;
+    succeed=&quot;any&quot; repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Chase
+    if not too far from base&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;selector
+    usepriorities=&quot;False&quot; repeatuntil=&quot;failure&quot; name=&quot;Fail
+    on too far from base&quot; debugbreak=&quot;False&quot;&gt;&lt;action repeatuntil=&quot;&quot;
+    priority=&quot;&quot; parametervalues=&quot;aG9tZUJhc2UAbWF4RnJvbUJhc2U=&quot;
+    parameters=&quot;RnJvbU9iamVjdFZhcmlhYmxlAE1heERpc3RhbmNl&quot; namespace=&quot;(global)&quot;
+    name=&quot;DistanceCheck&quot; debugbreak=&quot;False&quot; classname=&quot;Sentio.Necromancer.DistanceCheck&quot;
+    /&gt;&lt;expression returnvalue=&quot;evaluate&quot; repeatuntil=&quot;&quot;
+    priority=&quot;&quot; name=&quot;(currentTime() - lastDamageTime) &amp;gt; loseInterestTime&quot;
+    expression=&quot;(currentTime() - lastDamageTime) &amp;gt; loseInterestTime&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;/selector&gt;&lt;sequencer usepriorities=&quot;False&quot;
+    repeatuntil=&quot;&quot; name=&quot;Move To Attack&quot; debugbreak=&quot;False&quot;&gt;&lt;expression
+    returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;headLookTarget = currentEnemy&quot; expression=&quot;headLookTarget
+    = currentEnemy&quot; debugbreak=&quot;False&quot; /&gt;&lt;move turnspeed=&quot;&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;move&quot; movetarget=&quot;currentEnemy&quot;
+    movespeed=&quot;maxMovementSpeed&quot; facetarget=&quot;&quot; debugbreak=&quot;False&quot;
+    closeenoughdistance=&quot;attackDistance&quot; closeenoughangle=&quot;&quot; /&gt;&lt;expression
+    returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;behavior = &amp;quot;attack&amp;quot;&quot; expression=&quot;behavior
+    = &amp;quot;attack&amp;quot;&quot; debugbreak=&quot;False&quot; /&gt;&lt;/sequencer&gt;&lt;/parallel&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;Go Home&quot; debugbreak=&quot;False&quot;&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;headLookTarget = null&quot;
+    expression=&quot;headLookTarget = null&quot; debugbreak=&quot;False&quot; /&gt;&lt;move
+    turnspeed=&quot;&quot; repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;move&quot;
+    movetarget=&quot;homeBase&quot; movespeed=&quot;maxMovementSpeed&quot; facetarget=&quot;&quot;
+    debugbreak=&quot;False&quot; closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot;
+    /&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;currentEnemy = null&quot; expression=&quot;currentEnemy = null&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;/sequencer&gt;&lt;/selector&gt;&lt;/constraint&gt;&lt;constraint
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Attack&quot; debugbreak=&quot;False&quot;
+    constraint=&quot;behavior == &amp;quot;attack&amp;quot; &amp;amp;&amp;amp; currentEnemy
+    != null&quot;&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot;
+    name=&quot;attackEnemy = currentEnemy&quot; expression=&quot;attackEnemy = currentEnemy&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;mecparam valueexpression=&quot;true&quot;
+    repeatuntil=&quot;&quot; parametertype=&quot;boolean&quot; parametername=&quot;IsAttacking&quot;
+    name=&quot;IsAttacking = true&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot;
+    /&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;Attack
+    until enemy dead&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;&quot;
+    priority=&quot;&quot; name=&quot;Attack&quot; debugbreak=&quot;False&quot; constraint=&quot;attackEnemy
+    != null&quot;&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot;
+    name=&quot;attackDamageReceived = 0&quot; expression=&quot;attackDamageReceived
+    = 0&quot; debugbreak=&quot;False&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; name=&quot;lastAttackTime = 0.0&quot; expression=&quot;lastAttackTime
+    = 0.0&quot; debugbreak=&quot;False&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; name=&quot;isAttacking = (aggressionFactor &amp;gt;=
+    0.5)&quot; expression=&quot;isAttacking = (aggressionFactor &amp;gt;= 0.5)&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; name=&quot;waitTime = 1.0&quot; expression=&quot;waitTime
+    = 1.0&quot; debugbreak=&quot;False&quot; /&gt;&lt;parallel tiebreaker=&quot;fail&quot;
+    succeed=&quot;any&quot; repeatuntil=&quot;failure&quot; name=&quot;Attack Loop&quot;
+    fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;action repeatuntil=&quot;failure&quot;
+    parametervalues=&quot;YXR0YWNrRW5lbXkAYXR0YWNrRGlzdGFuY2U=&quot; parameters=&quot;Q3VycmVudEVuZW15VmFyaWFibGUAQXR0YWNrRGlzdGFuY2VWYXJpYWJsZQ==&quot;
+    namespace=&quot;(global)&quot; name=&quot;Check for Enemies&quot; debugbreak=&quot;False&quot;
+    classname=&quot;Sentio.Necromancer.CheckForEnemies&quot; /&gt;&lt;selector usepriorities=&quot;False&quot;
+    repeatuntil=&quot;failure&quot; name=&quot;Fail on too far from base&quot; debugbreak=&quot;False&quot;&gt;&lt;action
+    repeatuntil=&quot;&quot; priority=&quot;&quot; parametervalues=&quot;aG9tZUJhc2UAbWF4RGlzdGFuY2VGcm9tSG9tZUJhc2UgKiAxLjU=&quot;
+    parameters=&quot;RnJvbU9iamVjdFZhcmlhYmxlAE1heERpc3RhbmNl&quot; namespace=&quot;(global)&quot;
+    name=&quot;DistanceCheck&quot; debugbreak=&quot;False&quot; classname=&quot;Sentio.Necromancer.DistanceCheck&quot;
+    /&gt;&lt;expression returnvalue=&quot;evaluate&quot; repeatuntil=&quot;&quot;
+    priority=&quot;&quot; name=&quot;(currentTime() - lastDamageTime) &amp;gt; loseInterestTime&quot;
+    expression=&quot;(currentTime() - lastDamageTime) &amp;gt; loseInterestTime&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;/selector&gt;&lt;selector usepriorities=&quot;False&quot;
+    repeatuntil=&quot;running&quot; name=&quot;Test Fear&quot; debugbreak=&quot;False&quot;&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;True&quot; debugbreak=&quot;False&quot;&gt;&lt;expression returnvalue=&quot;evaluate&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;healthFactor &amp;lt;
+    0.5&quot; expression=&quot;healthFactor &amp;lt; 0.5&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;expression returnvalue=&quot;evaluate&quot; repeatuntil=&quot;&quot;
+    priority=&quot;&quot; name=&quot;random(0.0, 1 - min((aggressionFactor * healthFactor),
+    1.0)) &amp;gt; aggressionFactor&quot; expression=&quot;random(0.0, 1 - min((aggressionFactor
+    * healthFactor), 1.0)) &amp;gt; aggressionFactor&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;afraid = true&quot; expression=&quot;afraid = true&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;/sequencer&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot;
+    priority=&quot;&quot; name=&quot;afraid = false&quot; expression=&quot;afraid
+    = false&quot; debugbreak=&quot;False&quot; /&gt;&lt;/selector&gt;&lt;selector
+    usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;Attack Behavior&quot;
+    debugbreak=&quot;False&quot;&gt;&lt;sequencer usepriorities=&quot;False&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Afraid so Run&quot;
+    debugbreak=&quot;False&quot;&gt;&lt;expression returnvalue=&quot;evaluate&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;afraid == true&quot;
+    expression=&quot;afraid == true&quot; debugbreak=&quot;False&quot; /&gt;&lt;expression
+    returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;headLookTarget = null&quot; expression=&quot;headLookTarget = null&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;action repeatuntil=&quot;&quot; priority=&quot;&quot;
+    parametervalues=&quot;bW92ZVRhcmdldA==&quot; parameters=&quot;TW92ZVRhcmdldFZhcmlhYmxl&quot;
+    namespace=&quot;(global)&quot; name=&quot;Choose Run Away Position&quot; debugbreak=&quot;False&quot;
+    classname=&quot;Sentio.Necromancer.ChooseRunAwayPosition&quot; /&gt;&lt;move turnspeed=&quot;&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;move&quot; movetarget=&quot;moveTarget&quot;
+    movespeed=&quot;maxMovementSpeed&quot; facetarget=&quot;&quot; debugbreak=&quot;False&quot;
+    closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot; /&gt;&lt;expression
+    returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;afraid = false&quot; expression=&quot;afraid = false&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;/sequencer&gt;&lt;sequencer usepriorities=&quot;False&quot; repeatuntil=&quot;&quot;
+    priority=&quot;&quot; name=&quot;Wait&quot; debugbreak=&quot;False&quot;&gt;&lt;expression
+    returnvalue=&quot;evaluate&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;isAttacking == false&quot; expression=&quot;isAttacking == false&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;selector usepriorities=&quot;False&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Wait or Receive Damage&quot;
+    debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;Wait&quot; debugbreak=&quot;False&quot; constraint=&quot;damageReceived
+    == false&quot;&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot;
+    name=&quot;headLookTarget = attackEnemy&quot; expression=&quot;headLookTarget
+    = attackEnemy&quot; debugbreak=&quot;False&quot; /&gt;&lt;action repeatuntil=&quot;&quot;
+    parametervalues=&quot;NC4wAGF0dGFja0VuZW15AG1vdmVUYXJnZXQ=&quot; parameters=&quot;V2FpdERpc3RhbmNlAEN1cnJlbnRFbmVteVZhcmlhYmxlAE1vdmVUYXJnZXRWYXJpYWJsZQ==&quot;
+    namespace=&quot;(global)&quot; name=&quot;Choose AttackWaitPosition&quot; debugbreak=&quot;False&quot;
+    classname=&quot;Sentio.Necromancer.ChooseAttackWaitPosition&quot; /&gt;&lt;move
+    turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot; movetarget=&quot;moveTarget&quot;
+    movespeed=&quot;2&quot; facetarget=&quot;&quot; debugbreak=&quot;False&quot; closeenoughdistance=&quot;&quot;
+    closeenoughangle=&quot;&quot; /&gt;&lt;move turnspeed=&quot;&quot; repeatuntil=&quot;&quot;
+    name=&quot;face&quot; movetarget=&quot;&quot; movespeed=&quot;&quot; facetarget=&quot;attackEnemy&quot;
+    debugbreak=&quot;False&quot; closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot;
+    /&gt;&lt;timer waitforsec=&quot;waitTime&quot; returnvalue=&quot;success&quot;
+    name=&quot;timer&quot; debugbreak=&quot;False&quot; /&gt;&lt;/constraint&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;Got Hit&quot; debugbreak=&quot;False&quot;&gt;&lt;audio waituntildone=&quot;False&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;GotHit&quot; forcestoponexit=&quot;False&quot;
+    delay=&quot;0&quot; debugbreak=&quot;False&quot; audiosource=&quot;GotHit&quot;
+    /&gt;&lt;mecparam valueexpression=&quot;true&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    parametertype=&quot;trigger&quot; parametername=&quot;GotHit1&quot; name=&quot;GotHit&quot;
+    debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;timer waitforsec=&quot;1&quot;
+    returnvalue=&quot;success&quot; priority=&quot;&quot; name=&quot;timer&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;mecparam valueexpression=&quot;false&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    parametertype=&quot;trigger&quot; parametername=&quot;GotHit1&quot; name=&quot;Not
+    GotHit&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;/sequencer&gt;&lt;/selector&gt;&lt;expression
+    returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;isAttacking = true&quot; expression=&quot;isAttacking = true&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;/sequencer&gt;&lt;sequencer usepriorities=&quot;False&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Attack&quot; debugbreak=&quot;False&quot;&gt;&lt;expression
+    returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;headLookTarget = attackEnemy&quot; expression=&quot;headLookTarget
+    = attackEnemy&quot; debugbreak=&quot;False&quot; /&gt;&lt;iterator repeatuntil=&quot;&quot;
+    priority=&quot;&quot; name=&quot;Attack Repeatedly&quot; debugbreak=&quot;False&quot;
+    count=&quot;random(1, 3)&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;any&quot;
+    repeatuntil=&quot;&quot; name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;action
+    repeatuntil=&quot;&quot; parametervalues=&quot;YXR0YWNrRW5lbXkAYXR0YWNrRGlzdGFuY2UAbW92ZVRhcmdldABhdHRhY2tUeXBlAGF0dGFja1N0eWxl&quot;
+    parameters=&quot;Q3VycmVudEVuZW15AEF0dGFja1JhbmdlAE1vdmVUYXJnZXRWYXJpYWJsZQBBdHRhY2tUeXBlVmFyaWFibGUAQXR0YWNrU3R5bGVWYXJpYWJsZQ==&quot;
+    namespace=&quot;(global)&quot; name=&quot;ChooseAttack&quot; debugbreak=&quot;False&quot;
+    classname=&quot;Sentio.Necromancer.SelectAttack&quot; /&gt;&lt;move turnspeed=&quot;&quot;
+    repeatuntil=&quot;&quot; name=&quot;move&quot; movetarget=&quot;moveTarget&quot;
+    movespeed=&quot;maxMovementSpeed&quot; facetarget=&quot;&quot; debugbreak=&quot;False&quot;
+    closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot; /&gt;&lt;/parallel&gt;&lt;move
+    turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;face&quot; movetarget=&quot;&quot;
+    movespeed=&quot;&quot; facetarget=&quot;attackEnemy&quot; debugbreak=&quot;False&quot;
+    closeenoughdistance=&quot;&quot; closeenoughangle=&quot;2&quot; /&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;Attack&quot;
+    debugbreak=&quot;False&quot;&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot;
+    priority=&quot;&quot; name=&quot;DoAttack&quot; debugbreak=&quot;False&quot;&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;Melee&quot; debugbreak=&quot;False&quot;&gt;&lt;expression returnvalue=&quot;evaluate&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;attackStyle == &amp;quot;melee&amp;quot;&quot;
+    expression=&quot;attackStyle == &amp;quot;melee&amp;quot;&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;attackDelay = 0.5&quot; expression=&quot;attackDelay = 0.5&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;random repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;WeaponAttacks&quot;
+    debugbreak=&quot;False&quot;&gt;&lt;mecparam weight=&quot;&quot; valueexpression=&quot;true&quot;
+    repeatuntil=&quot;&quot; parametertype=&quot;trigger&quot; parametername=&quot;SingleAttack1&quot;
+    name=&quot;SingleAttack&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot;
+    /&gt;&lt;mecparam weight=&quot;&quot; valueexpression=&quot;true&quot; repeatuntil=&quot;&quot;
+    parametertype=&quot;trigger&quot; parametername=&quot;SingleAttack2&quot; name=&quot;SingleAttack&quot;
+    debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;mecparam weight=&quot;&quot;
+    valueexpression=&quot;true&quot; repeatuntil=&quot;&quot; parametertype=&quot;trigger&quot;
+    parametername=&quot;SingleAttack3&quot; name=&quot;SingleAttack&quot; debugbreak=&quot;False&quot;
+    damptime=&quot;0&quot; /&gt;&lt;/random&gt;&lt;/sequencer&gt;&lt;sequencer usepriorities=&quot;False&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Ranged&quot; debugbreak=&quot;False&quot;&gt;&lt;expression
+    returnvalue=&quot;evaluate&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;attackStyle == &amp;quot;ranged&amp;quot;&quot; expression=&quot;attackStyle
+    == &amp;quot;ranged&amp;quot;&quot; debugbreak=&quot;False&quot; /&gt;&lt;selector
+    usepriorities=&quot;False&quot; repeatuntil=&quot;success&quot; priority=&quot;&quot;
+    name=&quot;Wait for start state&quot; debugbreak=&quot;False&quot;&gt;&lt;mecstate
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;Wait for Locomotion&quot;
+    debugbreak=&quot;False&quot; animationstate=&quot;&amp;quot;Base Layer.Locomotion&amp;quot;&quot;
+    animationlayer=&quot;0&quot; /&gt;&lt;mecstate repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;Wait For Idle&quot; debugbreak=&quot;False&quot; animationstate=&quot;&amp;quot;Base
+    Layer.AttackIdle&amp;quot;&quot; animationlayer=&quot;0&quot; /&gt;&lt;/selector&gt;&lt;random
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;SpellAttacks&quot; debugbreak=&quot;False&quot;&gt;&lt;sequencer
+    weight=&quot;0.8&quot; usepriorities=&quot;False&quot; repeatuntil=&quot;&quot;
+    name=&quot;Fireball&quot; debugbreak=&quot;False&quot;&gt;&lt;action repeatuntil=&quot;&quot;
+    priority=&quot;&quot; parametervalues=&quot;YXR0YWNrRW5lbXk=&quot; parameters=&quot;Q3VycmVudEVuZW15VmFyaWFibGU=&quot;
+    namespace=&quot;(global)&quot; name=&quot;Throw Fireball&quot; debugbreak=&quot;False&quot;
+    classname=&quot;Sentio.Necromancer.ThrowFireball&quot; /&gt;&lt;mecparam valueexpression=&quot;true&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; parametertype=&quot;trigger&quot;
+    parametername=&quot;SpellCast1&quot; name=&quot;SpellAttack&quot; debugbreak=&quot;False&quot;
+    damptime=&quot;0&quot; /&gt;&lt;audio waituntildone=&quot;False&quot; repeatuntil=&quot;&quot;
+    priority=&quot;&quot; name=&quot;Fireball Spellcast Audio&quot; forcestoponexit=&quot;False&quot;
+    delay=&quot;0&quot; debugbreak=&quot;False&quot; audiosource=&quot;FireballSpellcast&quot;
+    /&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;attackDelay = 1.0&quot; expression=&quot;attackDelay = 1.0&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;/sequencer&gt;&lt;sequencer weight=&quot;0.2&quot; usepriorities=&quot;False&quot;
+    repeatuntil=&quot;&quot; name=&quot;Area Effect&quot; debugbreak=&quot;False&quot;&gt;&lt;action
+    repeatuntil=&quot;&quot; priority=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
+    namespace=&quot;(global)&quot; name=&quot;Throw Grasp&quot; debugbreak=&quot;False&quot;
+    classname=&quot;ThrowGrasp&quot; /&gt;&lt;mecparam valueexpression=&quot;true&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; parametertype=&quot;trigger&quot;
+    parametername=&quot;SpellCast2&quot; name=&quot;SpellAttack&quot; debugbreak=&quot;False&quot;
+    damptime=&quot;0&quot; /&gt;&lt;audio waituntildone=&quot;False&quot; repeatuntil=&quot;&quot;
+    priority=&quot;&quot; name=&quot;Dark Spellcast Audio&quot; forcestoponexit=&quot;False&quot;
+    delay=&quot;0&quot; debugbreak=&quot;False&quot; audiosource=&quot;DarkSpellcast&quot;
+    /&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;attackDelay = 4.0&quot; expression=&quot;attackDelay = 4.0&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;/sequencer&gt;&lt;/random&gt;&lt;/sequencer&gt;&lt;/selector&gt;&lt;selector
+    usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;Wait for animation&quot; debugbreak=&quot;False&quot;&gt;&lt;mecstate
+    repeatuntil=&quot;failure&quot; priority=&quot;&quot; name=&quot;mecstate&quot;
+    debugbreak=&quot;False&quot; animationstate=&quot;&amp;quot;Base Layer.AttackIdle&amp;quot;&quot;
+    animationlayer=&quot;0&quot; /&gt;&lt;mecstate repeatuntil=&quot;success&quot;
+    priority=&quot;&quot; name=&quot;mecstate&quot; debugbreak=&quot;False&quot; animationstate=&quot;&amp;quot;Base
+    Layer.AttackIdle&amp;quot;&quot; animationlayer=&quot;0&quot; /&gt;&lt;/selector&gt;&lt;timer
+    waitforsec=&quot;3.0 / attackSpeed + attackDelay&quot; returnvalue=&quot;success&quot;
+    priority=&quot;&quot; name=&quot;timer&quot; debugbreak=&quot;False&quot; /&gt;&lt;/sequencer&gt;&lt;/iterator&gt;&lt;expression
+    returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;isAttacking = false&quot; expression=&quot;isAttacking = false&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;waitTime = min(random(0,
+    2.5) / aggressionFactor, 4)&quot; expression=&quot;waitTime = min(random(0, 2.5)
+    / aggressionFactor, 4)&quot; debugbreak=&quot;False&quot; /&gt;&lt;/sequencer&gt;&lt;/selector&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;Pause on Enemy Death&quot; debugbreak=&quot;False&quot;&gt;&lt;expression
+    returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;attackEnemy == null&quot; expression=&quot;attackEnemy == null&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;timer waitforsec=&quot;1&quot; returnvalue=&quot;success&quot;
+    priority=&quot;&quot; name=&quot;timer&quot; debugbreak=&quot;False&quot; /&gt;&lt;expression
+    returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;currentEnemy = null&quot; expression=&quot;currentEnemy = null&quot;
+    debugbreak=&quot;False&quot; /&gt;&lt;/sequencer&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;currentEnemy = null&quot;
+    expression=&quot;currentEnemy = null&quot; debugbreak=&quot;False&quot; /&gt;&lt;/selector&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;sequencer
+    usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;Die&quot; debugbreak=&quot;False&quot;&gt;&lt;expression returnvalue=&quot;evaluate&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;expression&quot; expression=&quot;dying
+    == true&quot; debugbreak=&quot;False&quot; /&gt;&lt;mecparam valueexpression=&quot;true&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; parametertype=&quot;boolean&quot;
+    parametername=&quot;Dead&quot; name=&quot;Dead&quot; debugbreak=&quot;False&quot;
+    damptime=&quot;0&quot; /&gt;&lt;mecparam valueexpression=&quot;true&quot; repeatuntil=&quot;&quot;
+    priority=&quot;&quot; parametertype=&quot;trigger&quot; parametername=&quot;Die&quot;
+    name=&quot;Death animation&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot;
+    /&gt;&lt;action repeatuntil=&quot;&quot; priority=&quot;&quot; parametervalues=&quot;&quot;
+    parameters=&quot;&quot; namespace=&quot;(global)&quot; name=&quot;Die&quot; debugbreak=&quot;False&quot;
+    classname=&quot;Sentio.Necromancer.Die&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+    repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;headLookTarget = null&quot;
+    expression=&quot;headLookTarget = null&quot; debugbreak=&quot;False&quot; /&gt;&lt;expression
+    returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;dying = false&quot; expression=&quot;dying = false&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+    name=&quot;dead = true&quot; expression=&quot;dead = true&quot; debugbreak=&quot;False&quot;
+    /&gt;&lt;/sequencer&gt;&lt;/selector&gt;&lt;/sequencer&gt;&lt;/behaviortree&gt;"
+    type="System.String" id="treeData" /><field type="System.Array" id="treeBindings"
+    elementtype="System.String" /></fields><references /></scriptableobject>
+  customData: []
+  inflatePath: Assets/AI/BehaviorTrees/NecromancerMain.asset
+  linkedObjects: []

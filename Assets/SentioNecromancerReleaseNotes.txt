@@ -1,0 +1,8 @@
+Sentio Necromancer version 1.0 Release Notes
+-------------------------------------------------
+
+This is the initial release of the Sentio Necromancer.
+
+Sentio Characters are a new line of fully-rigged AI-driven characters that can be rapidly added to any game.  Look for additional Sentio Characters on the Unity Asset Store or at rivaltheory.com/store.
+
+Visit http://rivaltheory.com to learn more, or go to http://rivaltheory.com/forums with questions and comments
